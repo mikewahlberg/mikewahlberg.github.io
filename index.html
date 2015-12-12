@@ -24,7 +24,16 @@
 
     }
 
-    int numEnemies = 0;
+    function generateWorld()
+    {
+      var texture = THREE.ImageUtils.loadTexture('assets/images/groundterrain.jpg');
+      var planeMaterial = new THREE.MeshLambertMaterial({map: texture}, .4, .8);
+      var planeGeometry = new THREE.PlaneGeometry(200, 200, 6);
+      plane = new Physijs.BoxMesh( planeGeometry, planeMaterial, 0);
+      scene.add(plane);
+    }
+
+    //int numEnemies = 0;
     int waveNumber = 0;
     int waveCap = 2;
     function nextWave()
@@ -36,7 +45,11 @@
 
     function init()
     {
-
+      scene = new Physijs.Scene();
+      scene.setGravity(new THREE.Vector3(0, 0, -30));
+      scene.addEventListener('update', function() {
+        scene.simulate();
+      });
     }
 
     function render()
