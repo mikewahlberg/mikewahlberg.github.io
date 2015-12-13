@@ -23,8 +23,8 @@
     function loadCube()
     {
       var geo = new THREE.BoxGeometry(4, 4, 12);
-      var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'blue'}), .95, .95);
-      var temporaryCube = new Physijs.BoxMesh(geo, mat);
+      var mat = new THREE.MeshLambertMaterial({color: 'blue'}, .95, .95);
+      var temporaryCube = new THREE.Mesh(geo, mat);
       temporaryCube.position.x = 20;
       temporaryCube.position.y = 20;
       temporaryCube.position.z = 6;
@@ -116,14 +116,17 @@
       }
       else if(keyboard.pressed("s"))
       {
+        console.log("Pressed 's'\n");
         temporaryCube.position.y -=5;
       }
       else if(keyboard.pressed("d"))
       {
+        console.log("Pressed 'd'\n");
         temporaryCube.position.x += 5;
       }
       else if(keyboard.pressed("a"))
       {
+        console.log("Pressed 'a'\n");
         temporaryCube.position.x -= 5;
       }
 
