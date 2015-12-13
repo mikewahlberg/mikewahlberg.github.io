@@ -109,6 +109,23 @@
       if(numEnemies == 0)
         nextWave();
 
+      if(keyboard.pressed("w"))
+      {
+        cube.position.y += 5;
+      }
+      else if(keyboard.pressed("s"))
+      {
+        cube.position.y -=5;
+      }
+      else if(keyboard.pressed("d"))
+      {
+        cube.position.x += 5;
+      }
+      else if(keyboard.pressed("a"))
+      {
+        cube.position.x -= 5;
+      }
+
       requestAnimationFrame(render);
       renderer.render(scene, camera);
     }
