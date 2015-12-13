@@ -15,7 +15,7 @@
 
 <body>
   <script>
-    var temporaryCube;
+    var temporaryCube, shot;
     var camera, scene, renderer, keyboard, loader, url, spotlight;
     var material, textGeom, textMesh;
     var score = 0, health = 100, damage = 0;
@@ -49,6 +49,17 @@
       var planeGeometry = new THREE.PlaneGeometry(200, 200, 6);
       plane = new Physijs.BoxMesh( planeGeometry, planeMaterial, 0);
       scene.add(plane);
+    }
+
+    function shotsFired()
+    {
+      var mat = new MeshLambertMaterial({color: 'grey'}, .95, .95);
+      var geo = new THREE.SphereGeometry(3);
+      shot = Physijs.SphereMesh(geo, mat);
+      shot.position.x = temporaryCube.position.x;
+      shot.position.y = temporaryCube.position.y;
+      shot.position.z = temporaryCube.position.z;
+      scene.add(shot);
     }
 
     var numEnemies = 0;
@@ -130,6 +141,26 @@
       {
         console.log("Pressed 'a'\n");
         temporaryCube.position.x -= .5;
+      }
+      else if(keyboard.pressed("i"))
+      {
+        console.log("Pressed i\n");
+
+      }
+      else if(keyboard.pressed("k"))
+      {
+        console.log("Pressed k\n");
+
+      }
+      else if(keyboard.pressed("j"))
+      {
+        console.log("Pressed j\n");
+
+      }
+      else if(keyboard.pressed("l"))
+      {
+        console.log("Pressed l\n");
+
       }
 
       requestAnimationFrame(render);
