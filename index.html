@@ -53,7 +53,7 @@
 
     function shotsFired()
     {
-      var mat = new MeshLambertMaterial({color: 'grey'}, .95, .95);
+      var mat = new THREE.MeshLambertMaterial({color: 'grey'}, .95, .95);
       var geo = new THREE.SphereGeometry(3);
       shot = Physijs.SphereMesh(geo, mat);
       shot.position.x = temporaryCube.position.x;
