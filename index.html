@@ -80,7 +80,7 @@
       camera.position.x = 0;
       camera.position.y = -100;
       camera.position.z = 250;
-      camera.lookAt(scene.position);
+      camera.lookAt(temporaryCube);
 
       renderer = new THREE.WebGLRenderer();
       renderer.setClearColor(0x0000000, 1.0);
@@ -124,6 +124,7 @@
       {
         console.log("Pressed 'd'\n");
         temporaryCube.position.x += .05;
+
       }
       else if(keyboard.pressed("a"))
       {
