@@ -50,6 +50,24 @@
       scene.addEventListener('update', function() {
         scene.simulate();
       });
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .1, 10000);
+      camera.position.x = 0;
+      camera.position.y = -100;
+      camera.position.z = 250;
+      camera.lookAt(scene.position);
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setClearColor(0x0000000, 1.0);
+      renderer.setSize( window.innerWidth, window.innerHeight);
+      renderer.shadowMapEnabled = true;
+
+      generateWorld();
+
+      scene.simulate();
+
+      document.body.appendChild(renderer.domElement);
+      render();
     }
 
     function render()
