@@ -87,6 +87,9 @@
     {
       if(numEnemies == 0)
         nextWave();
+
+      requestAnimationFrame(render);
+      renderer.render(scene, camera);
     }
   </script>
 </body>
