@@ -21,7 +21,12 @@
 
     function loadModel()
     {
-
+      loader = new THREEx.UniversalLoader();
+		  url = ['female02.obj', 'female.mtl'];
+		  loader.load(url, function(object3d) {
+			//scene.add(object3d);
+			  render();
+		  });
     }
 
     function generateWorld()
@@ -91,6 +96,8 @@
       requestAnimationFrame(render);
       renderer.render(scene, camera);
     }
+
+    window.onload = init;
   </script>
 </body>
 
