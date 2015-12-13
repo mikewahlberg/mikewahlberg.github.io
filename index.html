@@ -24,11 +24,11 @@
     {
       var geo = new THREE.BoxGeometry(4, 4, 12);
       var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'blue'}), .95, .95);
-      var msh = new Physijs.BoxMesh(geo, mat);
-      msh.position.x = 20;
-      msh.position.y = 20;
-      msh.position.z = 6;
-      scene.add(msh);
+      var temporaryCube = new Physijs.BoxMesh(geo, mat);
+      temporaryCube.position.x = 20;
+      temporaryCube.position.y = 20;
+      temporaryCube.position.z = 6;
+      scene.add(temporaryCube);
     }
 
     function loadModel()
@@ -111,19 +111,19 @@
 
       if(keyboard.pressed("w"))
       {
-        cube.position.y += 5;
+        temporaryCube.position.y += 5;
       }
       else if(keyboard.pressed("s"))
       {
-        cube.position.y -=5;
+        temporaryCube.position.y -=5;
       }
       else if(keyboard.pressed("d"))
       {
-        cube.position.x += 5;
+        temporaryCube.position.x += 5;
       }
       else if(keyboard.pressed("a"))
       {
-        cube.position.x -= 5;
+        temporaryCube.position.x -= 5;
       }
 
       requestAnimationFrame(render);
