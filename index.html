@@ -113,23 +113,23 @@
       if(keyboard.pressed("w"))
       {
         console.log("Pressed 'w'\n");
-        temporaryCube.position.y += .05;
+        temporaryCube.position.y += .5;
       }
       else if(keyboard.pressed("s"))
       {
         console.log("Pressed 's'\n");
-        temporaryCube.position.y -= .05;
+        temporaryCube.position.y -= .5;
       }
       else if(keyboard.pressed("d"))
       {
         console.log("Pressed 'd'\n");
-        temporaryCube.position.x += .05;
+        temporaryCube.position.x += .5;
 
       }
       else if(keyboard.pressed("a"))
       {
         console.log("Pressed 'a'\n");
-        temporaryCube.position.x -= .05;
+        temporaryCube.position.x -= .5;
       }
 
       requestAnimationFrame(render);
