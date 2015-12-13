@@ -15,7 +15,7 @@
 
 <body>
   <script>
-    var camera, scene, renderer, keyboard, loader, url;
+    var camera, scene, renderer, keyboard, loader, url, spotlight;
     var material, textGeom, textMesh;
     var score = 0, health = 100, damage = 0;
 
@@ -45,6 +45,11 @@
 
     function init()
     {
+      keyboard = new THREEx.KeyboardState();
+
+      Physijs.scripts.worker = 'libs/physijs_worker.js';
+      Physijs.scripts.ammo = 'ammo.js';
+
       scene = new Physijs.Scene();
       scene.setGravity(new THREE.Vector3(0, 0, -30));
       scene.addEventListener('update', function() {
@@ -61,6 +66,14 @@
       renderer.setClearColor(0x0000000, 1.0);
       renderer.setSize( window.innerWidth, window.innerHeight);
       renderer.shadowMapEnabled = true;
+
+      spotLight = new THREE.SpotLight( 0xffffff );
+  		spotLight.position.set( 0, 0, 250 );
+  		spotLight.shadowCameraNear = 10;
+  		spotLight.shadowCameraFar = 100;
+  		spotLight.castShadow = true;
+  		spotLight.intensity = 4;
+  		scene.add(spotLight);
 
       generateWorld();
 
