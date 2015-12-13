@@ -15,9 +15,21 @@
 
 <body>
   <script>
+    var temporaryCube;
     var camera, scene, renderer, keyboard, loader, url, spotlight;
     var material, textGeom, textMesh;
     var score = 0, health = 100, damage = 0;
+
+    function loadCube()
+    {
+      var geo = new THREE.BoxGeomaetry(4, 4, 12);
+      var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'blue'}), .95, .95);
+      var msh = new Physijs.BoxMesh(geo, mat);
+      msh.position.x = 20;
+      msh.position.y = 20;
+      msh.position.z = 6;
+      scene.add(msh);
+    }
 
     function loadModel()
     {
@@ -61,6 +73,8 @@
         scene.simulate();
       });
 
+
+
       camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .1, 10000);
       camera.position.x = 0;
       camera.position.y = -100;
@@ -81,6 +95,8 @@
   		scene.add(spotLight);
 
       generateWorld();
+
+      loadCube();
 
       scene.simulate();
 
