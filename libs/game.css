@@ -1,0 +1,66 @@
+body {
+	background-color: black;
+	color: yellow;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#ready {
+	width: 100%;
+	text-align: center;
+	font-size: 150px;
+	position: absolute;
+	z-index: 100;
+}
+
+#lives {
+	position: absolute;
+	z-index: 101;
+	width: 100%;
+	font-size: 30px;
+}
+
+#score {
+	position: absolute;
+	z-index: 103;
+	margin-top:100px;
+	font-size: 20px;
+}
+
+#about {
+	position: absolute;
+	z-index: 102;
+	right: 0px;
+	margin-right: 10px;
+}
+
+#about-div {
+	margin-left: 150px;
+	margin-right: 150px;
+	border: 2px solid yellow;
+	position: relative;
+	z-index: 103;
+	background-color: black;
+	padding: 5px;
+}
+
+#about-wrapper {
+	width: 100%;
+	position: absolute;
+	top: 100px;
+	display: none;
+}
+
+#ai {
+	color: white;
+	position: relative;
+	top: 40px;
+}
+
+.life-icon {
+	margin-right: 10px;
+}
+
+a {
+	color: yellow;
+}
