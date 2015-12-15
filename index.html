@@ -317,6 +317,11 @@
         camera.rotation.z = 120;
       }
 
+      while(keyboard.pressed("z"))
+      {
+        camera.rotation.z += 10;
+      }
+
       if(shotFired)
       {
         for(var i = 0; i < numEnemies; i++)
