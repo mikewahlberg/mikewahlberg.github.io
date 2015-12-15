@@ -323,11 +323,11 @@
       }
       else if(keyboard.pressed("q"))
       {
-
+        camera.lookAt(new THREE.Vector3(1,0,0));
       }
       else if(keyboard.pressed("e"))
       {
-
+        camera.lookAt(scene.postion);
       }
 
       if(shotFired)
