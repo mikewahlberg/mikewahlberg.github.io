@@ -264,7 +264,7 @@
         nextWave();
 
 
-
+      var firstPerson = false;
       if(keyboard.pressed("w"))
       {
         console.log("Pressed 'w'\n");
@@ -323,11 +323,24 @@
       }
       else if(keyboard.pressed("q"))
       {
-        camera.lookAt(new THREE.Vector3(1,0,0));
+        firstPerson = true;
       }
       else if(keyboard.pressed("e"))
       {
-        camera.lookAt(scene.postion);
+        firstPerson = false;
+        camera.position.x = 0;
+        camera.position.y = -100;
+        camera.position.z = 250;
+        camera.lookAt(scene.position);
+
+      }
+
+      if(firstPerson)
+      {
+        camera.position.x = temporaryCube.position.x;
+        camera.position.y = temporaryCube.position.y;
+        camera.position.z = temporaryCube.position.z;
+        camera.rotation.x = 90;
       }
 
       if(shotFired)
