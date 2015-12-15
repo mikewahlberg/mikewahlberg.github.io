@@ -60,7 +60,7 @@
       var geo = new THREE.SphereGeometry(3);
       shot = new Physijs.SphereMesh(geo, mat);
       console.log("Shot created.\n");
-      shot.position.x = temporaryCube.position.x;
+      shot.position.x = temporaryCube.position.x + 10;
       shot.position.y = temporaryCube.position.y;
       shot.position.z = temporaryCube.position.z;
       scene.add(shot);
