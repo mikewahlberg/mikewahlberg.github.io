@@ -206,7 +206,7 @@
       {
         for(var i = 0; i < numEnemies; i++)
         {
-          if(shot.position.x == enemies[i].position.x && shot.position.y == enemies[i].position.y)
+          if(Math.abs(shot.position.x - enemies[i].position.x) <= 2 && Math.abs(shot.position.y == enemies[i].position.y) <= 2)
           {
             score++;
             numEnemies--;
