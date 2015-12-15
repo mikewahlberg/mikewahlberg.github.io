@@ -53,6 +53,9 @@
 
     function shotsFired()
     {
+      if(shotFired)
+        scene.remove(shot);
+
       var mat = new Physijs.createMaterial( new THREE.MeshLambertMaterial({color: 'grey'}, .95, .95));
       var geo = new THREE.SphereGeometry(3);
       shot = Physijs.SphereMesh(geo, mat);
@@ -146,10 +149,10 @@
       else if(keyboard.pressed("i"))
       {
         console.log("Pressed i\n");
-        shotFired = true;
+
 
         shotsFired();
-
+        shotFired = true;
 //        shot.applyCentralImpulse(new THREE.Vector3(8000, -(Math.PI/2-temporaryCube.rotation.z) * 4000, -temporaryCube.rotation.y*10000));
 
       }
