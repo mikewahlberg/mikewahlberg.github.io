@@ -58,11 +58,11 @@
 
       var mat = new Physijs.createMaterial( new THREE.MeshLambertMaterial({color: 'grey'}, .95, .95));
       var geo = new THREE.SphereGeometry(3);
-      shot = Physijs.SphereMesh(geo, mat);
+      //shot = Physijs.SphereMesh(geo, mat);
       shot.position.x = temporaryCube.position.x;
       shot.position.y = temporaryCube.position.y;
       shot.position.z = temporaryCube.position.z;
-      scene.add(shot);
+      //scene.add(shot);
     }
 
     var numEnemies = 0;
@@ -153,7 +153,7 @@
 
         shotsFired();
         shotFired = true;
-//        shot.applyCentralImpulse(new THREE.Vector3(8000, -(Math.PI/2-temporaryCube.rotation.z) * 4000, -temporaryCube.rotation.y*10000));
+        shot.applyCentralImpulse(new THREE.Vector3(8000, -(Math.PI/2-temporaryCube.rotation.z) * 4000, -temporaryCube.rotation.y*10000));
 
       }
       else if(keyboard.pressed("k"))
