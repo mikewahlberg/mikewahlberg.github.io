@@ -49,8 +49,8 @@
       while(titleCont)
       for(var i = 0; i < 4; i++)
       {
-        textMeshes[i].position.y += 5;
-        if(textMeshes[i].position.y > 200)
+        textMeshes[i].position.y -= 5;
+        if(textMeshes[i].position.y < 200)
         {
           scene.remove(textMeshes[i]);
           if(i == 3)
