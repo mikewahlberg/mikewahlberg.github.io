@@ -267,22 +267,30 @@
       var firstPerson = false;
       if(keyboard.pressed("w"))
       {
+        if(firstPerson)
+          camera.position.y += .5;
         console.log("Pressed 'w'\n");
         temporaryCube.position.y += .5;
       }
       else if(keyboard.pressed("s"))
       {
+        if(firstPerson)
+          camera.position.y -= .5;
         console.log("Pressed 's'\n");
         temporaryCube.position.y -= .5;
       }
       else if(keyboard.pressed("d"))
       {
+        if(firstPerson)
+          camera.position.x += .5;
         console.log("Pressed 'd'\n");
         temporaryCube.position.x += .5;
 
       }
       else if(keyboard.pressed("a"))
       {
+        if(firstPerson)
+          camera.position.y -= .5;
         console.log("Pressed 'a'\n");
         temporaryCube.position.x -= .5;
       }
@@ -340,7 +348,7 @@
         camera.position.x = temporaryCube.position.x;
         camera.position.y = temporaryCube.position.y;
         camera.position.z = temporaryCube.position.z;
-        camera.rotation.x = 50;
+        camera.rotation.x = 75;
       }
 
       if(shotFired)
