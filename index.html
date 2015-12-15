@@ -47,7 +47,7 @@
   </div>
   <div id="right">
   <script>
-    var temporaryCube, shot;
+    var temporaryCube, shot, shotNoise;
     var camera, scene, renderer, keyboard, loader, url, spotlight;
     var material, textGeom, textMesh;
     var score = 0, health = 100, damage = 0;
@@ -190,6 +190,7 @@
 
     function init()
     {
+      shotNoise = new Audio("assets/Sounds/shot.mp3");
         var text = "Michael Wahlberg";
       var material = new THREE.MeshPhongMaterial({
         color: 'green'
@@ -283,6 +284,7 @@
       }
       else if(keyboard.pressed("i"))
       {
+        shotNoise.play();
         console.log("Pressed i\n");
         shotsFired();
         shotFired = true;
@@ -291,6 +293,7 @@
       }
       else if(keyboard.pressed("k"))
       {
+        shotNoise.play();
         console.log("Pressed k\n");
         shotsFired();
         shotFired = true;
@@ -299,6 +302,7 @@
       }
       else if(keyboard.pressed("j"))
       {
+        shotNoise.play();
         console.log("Pressed j\n");
         shotsFired();
         shotFired = true;
@@ -307,6 +311,7 @@
       }
       else if(keyboard.pressed("l"))
       {
+        shotNoise.play();
         console.log("Pressed l\n");
         shotsFired();
         shotFired = true;
