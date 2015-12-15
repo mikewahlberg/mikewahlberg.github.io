@@ -91,6 +91,15 @@
       }
     }
 
+    function moveEnemies()
+    {
+      for(var i = 0; i < numEnemies; i++)
+      {
+        enemies[i].position.x += 2 * Math.cos((enemies[i].position.x - temporaryCube.position.x)/(enemies[i].position.y - temporaryCube.position.y));
+        enemies[i].position.y += 2 * Math.sin((enemies[i].position.x - temporaryCube.position.x)/(enemies[i].position.y - temporaryCube.position.y));
+      }
+    }
+
     function init()
     {
       shotFired = false;
@@ -219,6 +228,8 @@
 
       if(shot.position.z < -20)
         scene.remove(shot);
+
+      moveEnemies();
 
       requestAnimationFrame(render);
       renderer.render(scene, camera);
