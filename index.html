@@ -118,7 +118,7 @@
       for(var i = 0; i < numEnemies; i++)
       {
         var geo = new THREE.BoxGeometry(4, 4, 12);
-			  var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'blue'}), .95, .95);
+			  var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'red'}), .95, .95);
 			  var msh = new Physijs.BoxMesh(geo, mat);
         //temporaryEnemy = new THREE.Mesh(geo, mat);
         msh.position.x = (Math.random() * 200)-100;
@@ -135,8 +135,8 @@
     {
       for(var i = 0; i < numEnemies; i++)
       {
-        enemies[i].position.x += 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
-        enemies[i].position.y += 2 * Math.sin((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
+        enemies[i].position.x -= 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
+        enemies[i].position.y -= 2 * Math.sin((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
         if(enemies[i].position.x < 100)
           enemies[i].position.x *= -1;
 
