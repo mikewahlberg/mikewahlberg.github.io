@@ -120,6 +120,8 @@
       var planeGeometry = new THREE.PlaneGeometry(300, 300, 6);
       plane = new Physijs.BoxMesh( planeGeometry, planeMaterial, 0);
       scene.add(plane);
+
+
     }
 
     function shotsFired()
@@ -185,6 +187,8 @@
           enemies[i].position.x *= -1;
         if(enemies[i].position.y < -100)
           enemies[i].position.y *= -1;*/
+        if(enemies[i].position.z < 6)
+          enemies[i].position.z = 6;
       }
     }
 
