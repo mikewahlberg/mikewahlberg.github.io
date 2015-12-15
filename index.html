@@ -69,6 +69,7 @@
     var numEnemies = 0;
     var waveNumber = 0;
     var waveCap = 2;
+    var enemies = [];
     function nextWave()
     {
       waveNumber++;
@@ -83,7 +84,8 @@
         temporaryEnemy.position.x = (Math.random() * 200)-100;
         temporaryEnemy.position.y = (Math.random() * 200)-100;
         temporaryEnemy.position.z = 6;
-        scene.add(temporaryEnemy);
+        enemies.append(temporaryEnemy);
+        scene.add(enemies[enemies.size()-1]);
 
       }
     }
@@ -197,6 +199,19 @@
         shotsFired();
         shotFired = true;
         shot.applyCentralImpulse(new THREE.Vector3(80000, 0, 0));
+      }
+
+      if(shotFired)
+      {
+        for(var i = 0; i < numEnemies; i++)
+        {
+          if(shot.position.x == enemies[i].position.x && shot.position.y == enemies[i].position.y)
+          {
+            score++;
+            numEnemies--;
+            scene.remove(enemies[i]);
+          }
+        }
       }
 
       if(shot.position.z < -20)
