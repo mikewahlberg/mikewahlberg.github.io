@@ -186,7 +186,7 @@
         shot.applyCentralImpulse(new THREE.Vector3(8000, 0, 0));
       }
 
-      if(shot.position.z < 0)
+      if(shot.position.z < -20)
         scene.remove(shot);
 
       requestAnimationFrame(render);
