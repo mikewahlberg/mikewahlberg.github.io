@@ -301,7 +301,7 @@
         camera.position.x = 0;
         camera.position.y = -100;
         camera.position.z = 250;
-        camera.lookAt(new THREE.Vector3(0,200,0));
+        camera.lookAt(scene.position);
 
       }
 
@@ -313,7 +313,7 @@
         camera.position.z = temporaryCube.position.z;
         camera.rotation.z = 225;
         */
-        camera.lookAt(temporaryCube);
+        camera.lookAt(new THREE.Vector3(0,200,0));
         camera.rotation.z = 120;
       }
 
