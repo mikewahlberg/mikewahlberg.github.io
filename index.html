@@ -159,7 +159,7 @@
         console.log("Pressed i\n");
         shotsFired();
         shotFired = true;
-        shot.applyCentralImpulse(new THREE.Vector3(0, 8000, 0));
+        shot.applyCentralImpulse(new THREE.Vector3(0, 80000, 0));
 
       }
       else if(keyboard.pressed("k"))
@@ -167,7 +167,7 @@
         console.log("Pressed k\n");
         shotsFired();
         shotFired = true;
-        shot.applyCentralImpulse(new THREE.Vector3(0, -8000, 0));
+        shot.applyCentralImpulse(new THREE.Vector3(0, -80000, 0));
 
       }
       else if(keyboard.pressed("j"))
@@ -175,7 +175,7 @@
         console.log("Pressed j\n");
         shotsFired();
         shotFired = true;
-        shot.applyCentralImpulse(new THREE.Vector3(-8000, 0, 0));
+        shot.applyCentralImpulse(new THREE.Vector3(-80000, 0, 0));
 
       }
       else if(keyboard.pressed("l"))
@@ -183,7 +183,7 @@
         console.log("Pressed l\n");
         shotsFired();
         shotFired = true;
-        shot.applyCentralImpulse(new THREE.Vector3(8000, 0, 0));
+        shot.applyCentralImpulse(new THREE.Vector3(80000, 0, 0));
       }
 
       if(shot.position.z < -20)
