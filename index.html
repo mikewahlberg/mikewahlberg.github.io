@@ -78,10 +78,10 @@
       for(var i = 0; i < numEnemies; i++)
       {
         var geo = new THREE.BoxGeometry(4, 4, 12);
-        var mat = new THREE.MeshLambertMaterial({color: 'blue'}, .95, .95);
+        var mat = new THREE.MeshLambertMaterial({color: 'red'}, .95, .95);
         temporaryEnemy = new THREE.Mesh(geo, mat);
-        temporaryEnemy.position.x = Math.random() * 200;
-        temporaryEnemy.position.y = Math.random() * 200;
+        temporaryEnemy.position.x = Math.random() * 20;
+        temporaryEnemy.position.y = Math.random() * 20;
         temporaryEnemy.position.z = 6;
         scene.add(temporaryEnemy);
 
