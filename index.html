@@ -135,11 +135,12 @@
     {
       for(var i = 0; i < numEnemies; i++)
       {
+        /*
         enemies[i].position.x += 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
         enemies[i].position.y += 2 * Math.sin((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
         if(enemies[i].position.x < 100)
           enemies[i].position.x *= -1;
-
+        */
         enemies[i].position.x += 2 * Math.cos(Math.sqrt(Math.pow(temporaryCube.position.x - enemies[i].position.x, 2) + Math.pow(temporaryCube.position.y - enemies[i].position.y, 2))/(temporaryCube.position.x-enemies[i].position.x));
         enemies[i].position.y += 2 * Math.sin(Math.sqrt(Math.pow(temporaryCube.position.x - enemies[i].position.x, 2) + Math.pow(temporaryCube.position.y - enemies[i].position.y, 2))/(temporaryCube.position.y-enemies[i].position.y));
 
