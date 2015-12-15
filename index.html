@@ -141,6 +141,14 @@
 
         enemies[i].position.x += Math.random();
         enemies[i].position.y += Math.random();
+        if(enemies[i].position.x < -100)
+          enemies[i].position.x *= -1;
+        if(enemies[i].position.y > 100)
+          enemies[i].position.x *= -1;
+        if(enemies[i].position.y < -100)
+          enemies[i].position.y *= -1;
+        if(enemies[i].position.y > 100)
+          enemies[i].position.y *= -1;
       }
     }
 
