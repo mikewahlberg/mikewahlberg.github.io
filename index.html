@@ -85,7 +85,7 @@
     {
       var texture = THREE.ImageUtils.loadTexture('assets/images/groundterrain.jpg');
       var planeMaterial = new THREE.MeshLambertMaterial({map: texture}, .4, .8);
-      var planeGeometry = new THREE.PlaneGeometry(600, 600, 6);
+      var planeGeometry = new THREE.PlaneGeometry(300, 300, 6);
       plane = new Physijs.BoxMesh( planeGeometry, planeMaterial, 0);
       scene.add(plane);
     }
