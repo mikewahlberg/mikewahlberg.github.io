@@ -139,8 +139,8 @@
         if(enemies[i].position.x < 100)
           enemies[i].position.x *= -1;*/
 
-        enemies[i].position.x += Math.random();
-        enemies[i].position.y += Math.random();
+        enemies[i].position.x = Math.pow(Math.random(), -1) + Math.random();
+        enemies[i].position.y = Math.pow(Math.random(), -1) + Math.random();
         if(enemies[i].position.x < -100)
           enemies[i].position.x *= -1;
         if(enemies[i].position.y > 100)
