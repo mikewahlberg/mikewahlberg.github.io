@@ -134,8 +134,13 @@
     {
       for(var i = 0; i < numEnemies; i++)
       {
-        enemies[i].position.x += 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
+        /*enemies[i].position.x += 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
         enemies[i].position.y += 2 * Math.sin((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
+        if(enemies[i].position.x < 100)
+          enemies[i].position.x *= -1;*/
+
+        enemies[i].position.x = Math.random();
+        enemies[i].position.y = Math.random();
       }
     }
 
@@ -156,7 +161,7 @@
         scene.simulate();
       });
 
-      titleCrawl();
+      //titleCrawl();
 
       camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .1, 10000);
       camera.position.x = 0;
