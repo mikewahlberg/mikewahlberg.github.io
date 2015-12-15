@@ -317,7 +317,7 @@
         camera.rotation.z = 120;
       }
 
-      while(keyboard.pressed("z"))
+      if(keyboard.pressed("z"))
       {
         camera.rotation.z += 10;
       }
@@ -342,7 +342,7 @@
 
       moveEnemies();
 
-      var elem = document.getElementById("scores").innerHTML ='<br><center>' + score + '</center>';
+      var elem = document.getElementById("scores").innerHTML ='<br><center>' + score + ' - ' + waveNumber + '</center>';
 
       requestAnimationFrame(render);
       renderer.render(scene, camera);
