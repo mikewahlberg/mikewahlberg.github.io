@@ -128,8 +128,7 @@
       if(numEnemies == 0)
         nextWave();
 
-      if(shot.position.z < 0)
-        scene.remove(shot);
+
 
       if(keyboard.pressed("w"))
       {
@@ -183,6 +182,9 @@
         shotFired = true;
         shot.applyCentralImpulse(new THREE.Vector3(8000, 0, 0));
       }
+      shotsFired();
+      if(shot.position.z < 0)
+        scene.remove(shot);
 
       requestAnimationFrame(render);
       renderer.render(scene, camera);
