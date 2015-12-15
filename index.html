@@ -58,7 +58,7 @@
       console.log("Creating shot.\n");
       var mat = new Physijs.createMaterial( new THREE.MeshLambertMaterial({color: 'grey'}, .95, .95));
       var geo = new THREE.SphereGeometry(3);
-      shot = Physijs.SphereMesh(geo, mat);
+      shot = new Physijs.SphereMesh(geo, mat);
       console.log("Shot created.\n");
       shot.position.x = temporaryCube.position.x;
       shot.position.y = temporaryCube.position.y;
