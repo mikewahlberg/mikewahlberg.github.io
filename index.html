@@ -150,11 +150,9 @@
       else if(keyboard.pressed("i"))
       {
         console.log("Pressed i\n");
-
-
         shotsFired();
         shotFired = true;
-        shot.applyCentralImpulse(new THREE.Vector3(8000, -(Math.PI/2-temporaryCube.rotation.z) * 4000, -temporaryCube.rotation.y*10000));
+        shot.applyCentralImpulse(new THREE.Vector3(0, 100, 0));
 
       }
       else if(keyboard.pressed("k"))
