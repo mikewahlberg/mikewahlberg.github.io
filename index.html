@@ -118,13 +118,13 @@
       for(var i = 0; i < numEnemies; i++)
       {
         var geo = new THREE.BoxGeometry(4, 4, 12);
-			  var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'red'}), .95, .95);
+			  var mat = Physijs.createMaterial(new THREE.MeshLambertMaterial({color: 'blue'}), .95, .95);
 			  var msh = new Physijs.BoxMesh(geo, mat);
         //temporaryEnemy = new THREE.Mesh(geo, mat);
         msh.position.x = (Math.random() * 200)-100;
         msh.position.y = (Math.random() * 200)-100;
         msh.position.z = 6;
-        enemies[i] = msh;
+        enemies[i] = temporaryEnemy;
         //numEnemies++;
         scene.add(enemies[i]);
 
@@ -135,10 +135,14 @@
     {
       for(var i = 0; i < numEnemies; i++)
       {
-        enemies[i].position.x -= 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
-        enemies[i].position.y -= 2 * Math.sin((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
-        //if(enemies[i].position.x < 100)
-        //  enemies[i].position.x *= -1;
+        enemies[i].position.x += 2 * Math.cos((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
+        enemies[i].position.y += 2 * Math.sin((temporaryCube.position.x - enemies[i].position.x)/(temporaryCube.position.y - enemies[i].position.y));
+        if(enemies[i].position.x < 100)
+          enemies[i].position.x *= -1;
+
+        enemies[i].position.x += 2 * Math.cos(Math.sqrt(Math.pow(temporaryCube.position.x - enemies[i].position.x, 2) + Math.pow(temporaryCube.position.y - enemies[i].position.y, 2))/(temporaryCube.position.x-enemies[i].position.x));
+        enemies[i].position.y += 2 * Math.sin(Math.sqrt(Math.pow(temporaryCube.position.x - enemies[i].position.x, 2) + Math.pow(temporaryCube.position.y - enemies[i].position.y, 2))/(temporaryCube.position.y-enemies[i].position.y));
+
 
         /*enemies[i].position.x = Math.random();
         enemies[i].position.y = Math.random();
