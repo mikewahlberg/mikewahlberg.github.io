@@ -63,7 +63,7 @@
       shot.position.x = temporaryCube.position.x;
       shot.position.y = temporaryCube.position.y;
       shot.position.z = temporaryCube.position.z;
-      //scene.add(shot);
+      scene.add(shot);
     }
 
     var numEnemies = 0;
@@ -116,6 +116,9 @@
 
       loadCube();
 
+      shotsFired();
+      scene.remove(shot);
+
       scene.simulate();
 
       document.body.appendChild(renderer.domElement);
@@ -156,7 +159,6 @@
         console.log("Pressed i\n");
         shotsFired();
         shotFired = true;
-        scene.add(shot);
         shot.applyCentralImpulse(new THREE.Vector3(0, 8000, 0));
 
       }
@@ -165,7 +167,6 @@
         console.log("Pressed k\n");
         shotsFired();
         shotFired = true;
-        scene.add(shot);
         shot.applyCentralImpulse(new THREE.Vector3(0, -8000, 0));
 
       }
@@ -174,7 +175,6 @@
         console.log("Pressed j\n");
         shotsFired();
         shotFired = true;
-        scene.add(shot);
         shot.applyCentralImpulse(new THREE.Vector3(-8000, 0, 0));
 
       }
@@ -183,10 +183,9 @@
         console.log("Pressed l\n");
         shotsFired();
         shotFired = true;
-        scene.add(shot);
         shot.applyCentralImpulse(new THREE.Vector3(8000, 0, 0));
       }
-      shotsFired();
+
       if(shot.position.z < 0)
         scene.remove(shot);
 
