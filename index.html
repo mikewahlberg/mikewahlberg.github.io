@@ -20,6 +20,7 @@
     var material, textGeom, textMesh;
     var score = 0, health = 100, damage = 0;
 
+    var textMeshes = [];
     function titleCrawl()
     {
       var titleText = {"Michael Wahlberg",
@@ -38,13 +39,17 @@
         var nameGeom = new THREE.TextGeometry(titleText[i], {font: 'janda manatee solid'});
     		var nameMesh = new THREE.Mesh(textGeom, material);
     		nameMesh.scale.multiplyScalar(.25);
-    		nameMesh.position.x = -125;
-    		nameMesh.position.y = 100;
+    		nameMesh.position.x = 0;
+    		nameMesh.position.y = -100 - (5 * i);
     		nameMesh.rotation.x = 20;
-
-    		scene.add(nameMesh);
+        textMeshes[i] = nameMesh;
+    		scene.add(textMeshes[i]);
       }
 
+      for(var i = 0; i < 4; i++)
+      {
+        textMeshes[i].position.y += 5;
+      }
     }
 
     function loadCube()
@@ -129,7 +134,7 @@
 
     function init()
     {
-      titleCrawl();
+
 
       shotFired = false;
       console.log("Version .1.01\n");
@@ -144,7 +149,7 @@
         scene.simulate();
       });
 
-
+      titleCrawl();
 
       camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .1, 10000);
       camera.position.x = 0;
