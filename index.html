@@ -181,8 +181,9 @@
       scene.addEventListener('update', function() {
         scene.simulate();
       });
-      textMesh.scale(.25);
+      textMesh.scale.multiplyScalar(.25);
       textMesh.position.x = 600;
+      textMesh.rotation.x = 20;
       while(textMesh.position.x > -600)
         textMesh.position.x -= 5;
       scene.add(textMesh);
