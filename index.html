@@ -20,6 +20,33 @@
     var material, textGeom, textMesh;
     var score = 0, health = 100, damage = 0;
 
+    function titleCrawl()
+    {
+      var titleText = {"Michael Wahlberg",
+                        "CAP 4720",
+                        "This game has run into a few issues since its creation,",
+                        "Unfortunately it still has bugs but this is the general idea"};
+      var material = new THREE.MeshPhongMaterial({
+        color: 'green'
+      });
+      var textGeom = new THREE.TextGeometry( score, {
+        font: 'janda manatee solid'
+      });
+      var textMesh = new THREE.Mesh(textGeom, material);
+      for(var i = 0; i < 4; i++)
+      {
+        var nameGeom = new THREE.TextGeometry(titleText[i], {font: 'janda manatee solid'});
+    		var nameMesh = new THREE.Mesh(textGeom, material);
+    		nameMesh.scale.multiplyScalar(.25);
+    		nameMesh.position.x = -125;
+    		nameMesh.position.y = 100;
+    		nameMesh.rotation.x = 20;
+
+    		scene.add(nameMesh);
+      }
+
+    }
+
     function loadCube()
     {
       console.log("Loading cube.\n");
@@ -102,6 +129,8 @@
 
     function init()
     {
+      titleCrawl();
+
       shotFired = false;
       console.log("Version .1.01\n");
       keyboard = new THREEx.KeyboardState();
