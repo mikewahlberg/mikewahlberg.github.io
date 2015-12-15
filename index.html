@@ -258,13 +258,14 @@
 
     var direction = 0;
     var shotFired = true;
+    var firstPerson = false;
     function render()
     {
       if(numEnemies == 0 && waveNumber <= waveCap)
         nextWave();
 
 
-      var firstPerson = false;
+
       if(keyboard.pressed("w"))
       {
         if(firstPerson)
