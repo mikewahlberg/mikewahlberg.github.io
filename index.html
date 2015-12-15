@@ -11,9 +11,41 @@
 	<script src='libs/loaders/OBJMTLLoader.js'></script>
 	<script src='libs/threex.universalloader.js'></script>
 	<script src='libs/janda_manatee_solid_regular.typeface.js'></script>
+
+  <style>
+  	body {
+  		background-color: black;
+  	}
+  	#scoreboard {
+  		text-align: center;
+  		width:150px;
+  		float:left;
+  		padding:10px;
+  		font-family: Segoe UI, Helvetica, sans-serif;
+  		color: white;
+  	}
+  	#scores {
+  		position:absolute;
+  		font-size:300%;
+  		padding:0;
+  		width:500;
+  		float:left;
+  		margin:0;
+  		color: white;
+  	}
+  	#right {
+  		left:20px;
+  		width:150px;
+  		float:right;
+  		padding:10px;
+  	}
+  </style>
 </head>
 
 <body>
+  <div id="scores">
+  </div>
+  <div id="right">
   <script>
     var temporaryCube, shot;
     var camera, scene, renderer, keyboard, loader, url, spotlight;
@@ -309,12 +341,15 @@
 
       moveEnemies();
 
+      var elem = document.getElementById("scores").innerHTML ='<br><center>' + score + '</center>';
+
       requestAnimationFrame(render);
       renderer.render(scene, camera);
     }
 
     window.onload = init;
   </script>
+</div>
 </body>
 
 </html>
