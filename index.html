@@ -158,6 +158,15 @@
 
     function init()
     {
+        var text = "Michael Wahlberg";
+      var material = new THREE.MeshPhongMaterial({
+        color: 'green'
+      });
+      var textGeom = new THREE.TextGeometry( text, {
+        font: 'janda manatee solid'
+      });
+      var textMesh = new THREE.Mesh(textGeom, material);
+
 
 
       shotFired = false;
@@ -172,6 +181,12 @@
       scene.addEventListener('update', function() {
         scene.simulate();
       });
+
+      textMesh.position.x = 600;
+      while(textMesh.position.x > -600)
+        textMesh.position.x -= 5;
+      scene.add(textMesh);
+
 
       //titleCrawl();
 
